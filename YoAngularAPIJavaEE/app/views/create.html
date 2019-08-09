@@ -1,0 +1,43 @@
+<div class="row">
+  <h1>Create a employee</h1>
+  <p>It´s a form to create a employees in the app</p>
+
+  <hr>
+
+  <form ng-show="!sentinel">
+    <div class="form-row">
+
+      <div class="form-group col-md-5">
+        <label for="inputName">Name</label>
+        <input type="text" class="form-control" id="inputName" ng-model="pName">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="inputDepartment">Department</label>
+        <select id="inputDepartment" class="form-control" ng-model="pDepartment" >
+          <option selected>Choose a departement...</option>
+          <option value="Accounts">Accounts</option>
+          <option value="Technology">Technology</option>
+          <option value="HR">HR</option>
+        </select>
+      </div>
+
+      <div class="form-group col-md-3">
+        <label for="inputSalary">Salary</label>
+        <input type="number" class="form-control" id="inputSalary" ng-model="pSalary">
+      </div>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary" ng-click="fetchPost()">Create</button>
+
+  </form>
+
+  <div ng-show="sentinel">
+    <p> {{message}} </p>
+    <button class="btn btn-primary" ng-click="showForm()">Create other employee</button>
+  </div>
+
+  <br>
+</div>
+

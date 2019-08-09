@@ -1,0 +1,36 @@
+<div class="row">
+
+  <h1>List of employees</h1>
+  <p>This are the employees in the app and you can Delete anyone</p>
+
+  <div class="row" ng-if="!employeesList">
+    <button class="btn btn-primary" ng-click="fetch()"> Check my employees </button>
+  </div>
+
+  <div ng-if="employeesList">
+    <button class="btn btn-primary" ng-click="fetch()"> Refresh </button>
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Identify</th>
+          <th scope="col">Name</th>
+          <th scope="col">Department</th>
+          <th scope="col">Salary</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="e in employeesList">
+          <th scope="row">{{e._id.processIdentifier}}</th>
+          <td ng-model="pName">{{e.name}}</td>
+          <td>{{e.department}}</td>
+          <td>{{e.salary}}</td>
+          <th><button class="btn btn-danger" ng-click="fetchDelete(e.name)">Delete</button></th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <br>
+</div>
